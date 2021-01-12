@@ -1,0 +1,24 @@
+.table {
+    border: 1px solid;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.posicionarCabecalho {
+    text-align: center;
+}
+a {
+    color: aliceblue;
+}
+a:link { 
+    text-decoration:none;
+}
+input.btn_edit {
+    width: 100%;
+    border-radius: 5px;
+    background-color: coral;
+}
+input.btn_excloi{
+    width: 100%;
+    border-radius: 5px;
+    background: crimson;
+}
