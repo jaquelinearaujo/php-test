@@ -33,7 +33,6 @@
           <tbody>
              <?php 
                 foreach($grupo as $pessoa) { ?>
-
                    <tr>
                       <th><?=$pessoa["nome"]?></th>
                       <th><?=$pessoa["sexo"]?></th>
