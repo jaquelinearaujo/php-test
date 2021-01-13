@@ -25,9 +25,17 @@ include("cb.php");
                 <tr>
                     <td>Sexo: </td>
                     <?if($_POST["id"] != null ){?>
-                        <td><input type="text" name="sexo" value="<?=$pessoa["sexo"]?>" size="20"></td>
+                        <td><select name="sexo" value="<?=$pessoa["sexo"]?>">
+                            <option value="Maxoxo">Maxoxo</option>
+                            <option value="Femiamia">Femiamia</option>
+                        </select>
+                        </td>
                     <?}else{?>
-                        <td><input type="text" name="sexo" value=""></td>
+                        <td><select name="sexo" value="">
+                            <option value="Maxoxo">Maxoxo</option>
+                            <option value="Femiamia">Femiamia</option>
+                        </select>
+                        </td>
                     <?}?>
                 </tr>
                 <tr>

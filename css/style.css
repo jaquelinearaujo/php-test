@@ -22,3 +22,13 @@ input.btn_excloi{
     border-radius: 5px;
     background: crimson;
 }
+/*** start my css ****/
+.borda-r{
+    border-radius: 5px;
+}
+.btn{
+    border-radius: 5px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
