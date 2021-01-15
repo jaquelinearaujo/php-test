@@ -1,24 +1,29 @@
-<?php
-if(isset($_POST["acao"])){
-    if ($_POST["acao"]=="inserir"){
+<?
+var_dump($_REQUEST["acao"]=="excluir");
+var_dump(isset($_REQUEST["id"]));
+var_dump(count($_REQUEST)>0);
+if(isset($_REQUEST["acao"])){
+    if ($_REQUEST["acao"]=="inserir"){
         inserirPessoa();
     }
-    if ($_POST["acao"]=="alterar"){
+    if ($_REQUEST["acao"]=="alterar"){
         alterarPessoa();
     }
-    if($_POST["acao"]=="excluir"){
+    if($_REQUEST["acao"]=="excluir"){
+        var_dump($_REQUEST["acao"]=="excluir");
         excluirPessoa();
     }
+
 }
 
 function abrirBanco() {
     $conexao = new mysqli("localhost", "root", "root", "crud");
     return $conexao;
 }
-    function inserirPessoa() {
+    function inserirPessoa() { 
         $banco = abrirBanco();
         $sql = "INSERT INTO pessoa (id ,nome, sexo, criadoem, atualizadoem) 
-        VALUES (rand() * 3333 ,'{$_POST["nome"]}','{$_POST["sexo"]}',sysdate(),sysdate())";
+        VALUES (rand() * 3333 ,'{$_REQUEST["nome"]}','{$_REQUEST["sexo"]}',sysdate(),sysdate())";
         $banco->query($sql) === TRUE;
         $banco->close();
         voltarIndex(); 
@@ -26,7 +31,7 @@ function abrirBanco() {
 
     function alterarPessoa() {
         $banco = abrirBanco();
-        $sql = "UPDATE pessoa SET nome='{$_POST["nome"]}',sexo='{$_POST["sexo"]}',atualizadoem=sysdate() WHERE id='{$_POST["id"]}'";
+        $sql = "UPDATE pessoa SET nome='{$_REQUEST["nome"]}',sexo='{$_REQUEST["sexo"]}',atualizadoem=sysdate() WHERE id='{$_REQUEST["id"]}'";
         $banco->query($sql);
         $banco->close();
         voltarIndex();
@@ -34,7 +39,7 @@ function abrirBanco() {
 
     function excluirPessoa() {
         $banco = abrirBanco();
-        $sql = "DELETE FROM pessoa WHERE id='{$_POST["id"]}'";
+        $sql = "DELETE FROM pessoa WHERE id='{$_REQUEST["id"]}'";
         $banco->query($sql);
         $banco->close();
         voltarIndex();
