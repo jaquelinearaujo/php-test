@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <img src="img/pato.gif" style="width: 100px;" />
 <div class="container">
-    <form  action="empresa.php" method="$_GET" >
+    <form  action="empresa.php" method="get" >
         <table>
             <tbody>
                 <tr>

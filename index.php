@@ -44,8 +44,8 @@
                         <td><?=$pessoa["criadoem"]?></td>
                         <td><?=$pessoa["atualizadoem"]?></td>
                         <td>
-                            <!---  name="alterar" action="inserir.php" method="post" data-id="<?php echo $pessoa["id"];?>" name="excluir" action="cb.php" method="post"            href="inserir.php?id=<?=$pessoa["id"]?>&acao=excluir" ---->
-                            <a class="color-black btn fundo-amarelo" href="inserir.php?id=<?=$pessoa["id"]?>&acao=editar">
+                            <!---  name="alterar" action="inserir.php" method="post" data-id="<?php echo $pessoa["id"];?>" name="excluir" action="cb.php" method="post"    href="inserir.php?id=<?=$pessoa["id"]?>&acao=excluir" ---->
+                            <a class="color-black btn fundo-amarelo" href="inserir.php?id=<?=$pessoa["id"]?>">
                                 <b>Editar</b>
                             </a>
                         </td>
@@ -71,6 +71,7 @@
             <div style="display: flex; justify-content: center;">
                 <img src="img/pato.gif" style="width: 100px;" />
                 <img src="img/sapo.gif" style="width: 100px; height:100px;" />
+                <img src="img/arara.gif" style="width: 100px;height:100px; " />
             </div>
             <?
                 // Função para formatar a data
@@ -101,7 +102,6 @@
                 });
             });
 
-            
         });
 
     </script>

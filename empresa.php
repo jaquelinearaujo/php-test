@@ -1,6 +1,5 @@
 <?
     
-
     if(isset($_REQUEST['acao'])){
         if ($_REQUEST['acao']=="inserir"){
             inserirEmpresa();
