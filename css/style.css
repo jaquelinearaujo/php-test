@@ -2,38 +2,22 @@
     border: 1px solid;
     margin: auto;
     margin-bottom: 20px;
-}
-.posicionarCabecalho {
+}.posicionarCabecalho {
     text-align: center;
-}
-a {
+}a {
     color: aliceblue;
-}
-a:link { 
+}a:link { 
     text-decoration:none;
-}
-input.btn_edit {
-    width: 100%;
-    border-radius: 5px;
-    background-color: coral;
-}
-input.btn_excloi{
-    width: 100%;
-    border-radius: 5px;
-    background: crimson;
-}
-.btn{  /*** start my css ****/
+}.btn{  /*** start my css ****/
     border-radius: 5px;
     width: 100%;
     align-items: center;
     justify-content: center;
-}
-.color-black{
+}.color-black{
     color: black !important;
-}
-.fundo-amarelo{
+}.fundo-amarelo{
 background: yellow;
-}
-.fundo-vermelho{
+}.fundo-vermelho{
     background: red;
-    }
+}
+
