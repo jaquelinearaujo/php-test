@@ -1,5 +1,5 @@
 <?
-    
+
     if(isset($_REQUEST['acao'])){
         if ($_REQUEST['acao']=="inserir"){
             inserirEmpresa();
@@ -12,7 +12,7 @@
         $conexao = new mysqli("localhost", "root", "root", "crud");
         return $conexao;
         }
-    
+
     function inserirEmpresa() { 
         $banco = abriroBanco();
         $sql = "INSERT INTO empresa (empresa) 

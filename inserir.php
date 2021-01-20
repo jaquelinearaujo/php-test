@@ -43,7 +43,7 @@ include("empresa.php");
                 <?if(isset($_GET["id"]) != null ){?>
    
                     <?}else{?>
-                        <td>Empresa: </td>
+                        <td >Empresa: </td>
                        <td><select name="empresa" value="">
                             <option value="6800">Laudo</option>
                             <option value="6801">Rubio</option>
@@ -54,13 +54,14 @@ include("empresa.php");
                         </td>
                     <?}?>
                 </tr>
+
                     <?if(isset($_GET["id"]) != null ){?>
-                        <td><input type="hidden" name="acao" value="alterar">
+                        <td><input type="hidden" name="acao" value="alterar" tabela="pessoa">
                     <?}else{?>
-                        <td><input type="hidden" name="acao" value="inserir">
+                        <td><input type="hidden" name="acao" value="inserir" tabela="pessoa" >
                     <?}?>
-                <input type="hidden" name="id" value="<?=$pessoa["id"]?>"></td>
-                <td><input class="enviar" type="submit" name="Enviar" value="Enviar"></td>
+                <input type="hidden" name="id" value="<?=$pessoa["id"]?> " tabela="pessoa"></td>
+                <td><input class="enviar" type="submit" name="Enviar" value="Enviar" ></td>
                 </tr>
             </tbody>
         </table> 

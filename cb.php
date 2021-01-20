@@ -1,16 +1,17 @@
 <?
 
-
-
     if(isset($_REQUEST['acao'])){
 
         if ($_REQUEST['acao']=="inserir"){
+            $acao="INSERT INTO";
             inserirPessoa();
         }
         if ($_REQUEST['acao']=="alterar"){
+            $acao="UPDATE";
             alterarPessoa();
         }
         if($_REQUEST['acao']=="excluir"){
+            $acao="DELETE FROM";
             excluirPessoa();
         }
     }
@@ -21,24 +22,38 @@
     }
     function inserirPessoa() { 
         $banco = abrirBanco();
-        $sql = "INSERT INTO pessoa ( nome, sexo, criadoem, atualizadoem,idempresa)
-        VALUES ('{$_REQUEST["nome"]}','{$_REQUEST["sexo"]}',sysdate(),sysdate(),'{$_REQUEST["empresa"]}')";
+        if($_REQUEST['acao']=="inserir" && $_REQUEST['nome']) {
+            global $acao;
+            $tabela="pessoa";
+            $sql = $acao." $tabela ( nome, sexo, criadoem, atualizadoem,idempresa)
+            VALUES ('{$_REQUEST["nome"]}','{$_REQUEST["sexo"]}',sysdate(),sysdate(),'{$_REQUEST["empresa"]}')";
+        }else{
+            global $acao;
+            $tabela="empresa";
+            $sql = $acao." $tabela (empresa) 
+            VALUES ('{$_REQUEST["empresa"]}')";
+        }
+
         $banco->query($sql) === TRUE;
         $banco->close();
         voltarIndex(); 
     }
 
     function alterarPessoa() {
+        global $acao;
+        $tabela="pessoa";
         $banco = abrirBanco();
-        $sql = "UPDATE pessoa SET nome='{$_REQUEST["nome"]}',sexo='{$_REQUEST["sexo"]}',atualizadoem=now() WHERE id='{$_REQUEST["id"]}'";
-        die($sql); $banco->query($sql);
+        $sql = $acao." $tabela SET nome='{$_REQUEST["nome"]}',sexo='{$_REQUEST["sexo"]}',atualizadoem=now() WHERE id='{$_REQUEST["id"]}'";
+        $banco->query($sql);
         $banco->close();
         voltarIndex();
     }
 
     function excluirPessoa() {
+        global $acao;
+        global $tabela;
         $banco = abrirBanco();
-        $sql = "DELETE FROM pessoa WHERE id='{$_REQUEST["id"]}'";
+        $sql = "DELETE  FROM pessoa WHERE id='{$_REQUEST["id"]}'";
         $banco->query($sql);
         $banco->close();
         voltarIndex();

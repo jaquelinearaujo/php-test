@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <img src="img/pato.gif" style="width: 100px;" />
 <div class="container">
-    <form  action="empresa.php" method="get" >
+    <form  action="cb.php" method="get" >
         <table>
             <tbody>
                 <tr>
@@ -16,11 +16,11 @@
                     <td><input type="text" name="empresa" value=""></td>
                 </tr>
                 <tr>
-                    <td><input type="hidden" name="acao" value="inserir">
-                <input type="hidden" name="idEmpresa" value=""></td>
+                    <td><input type="hidden" name="acao" value="inserir" tabela="empresa">
+                <input type="hidden" name="idEmpresa" value="" tabela="empresa"></td>
                 <td><input type="submit" ></td>
                 </tr>
             </tbody>
-        </table> 
+        </table>
     </form>
 </div>

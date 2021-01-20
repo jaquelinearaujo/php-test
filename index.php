@@ -45,7 +45,7 @@
                         <td><?=$pessoa["atualizadoem"]?></td>
                         <td>
                             <!---  name="alterar" action="inserir.php" method="post" data-id="<?php echo $pessoa["id"];?>" name="excluir" action="cb.php" method="post"    href="inserir.php?id=<?=$pessoa["id"]?>&acao=excluir" ---->
-                            <a class="color-black btn fundo-amarelo" href="inserir.php?id=<?=$pessoa["id"]?>">
+                            <a class="color-black btn fundo-amarelo" href="inserir.php?id=<?=$pessoa["id"]?>" tabela="pessoa">
                                 <b>Editar</b>
                             </a>
                         </td>
@@ -65,7 +65,7 @@
             <br>
             <div class="text-center">
                 <button type="button" class="btn btn-primary">
-                <a href="novaEmpresa.php">Adicionar Empresa</a>
+                <a href="impresa.php">Adicionar Empresa</a>
                 </button>
             </div>
             <div style="display: flex; justify-content: center;">
@@ -73,18 +73,10 @@
                 <img src="img/sapo.gif" style="width: 100px; height:100px;" />
                 <img src="img/arara.gif" style="width: 100px;height:100px; " />
             </div>
-            <?
-                // Função para formatar a data
-                function formatoData($data) {
-                    $array = explode("-", $data);
-                    $novaData = $array[2]."/".$array[1]."/".$array[0];
-                    return $novaData;
-                }
-            ?>
             </div>
             <script>
         $(document).ready(function(){
-            $(".delete").click(function(){debugger;
+            $(".delete").click(function(){
             var id=$(this).attr("id");
                 $.ajax({
                     url: 'cb.php',
