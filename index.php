@@ -50,7 +50,7 @@
                             </a>
                         </td>
                             <td>
-                                <button class="btn fundo-vermelho delete" id="<?php echo $pessoa["id"];?>">
+                                <button class="btn fundo-vermelho delete" id="<?=$pessoa["id"];?>">
                                     <b>Excluir</b>
                                 </button>
                             </td>
@@ -76,17 +76,16 @@
             </div>
             <script>
         $(document).ready(function(){
-            $(".delete").click(function(){
+            $(".delete").click(function(){debugger;
             var id=$(this).attr("id");
                 $.ajax({
                     url: 'cb.php',
                     cache : false,
-                    type: 'GET',
+                    type: 'POST',
                     dataType :'text',
-                    data:{ id,acao: "excluir"},
-                    success: function(r) {
+                    data:{ id,acao_pessoa:"excluir"},
+                    success: function(data,text,jqxhr) {debugger;
                         location.reload();
-
                     },
                     error: function(r){
                         alert('deu erro');

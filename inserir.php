@@ -9,7 +9,7 @@ include("empresa.php");
 <meta charset="UTF-8">
 <div class="container">
    
-    <form  action="cb.php" method="get" >
+    <form  action="cb.php" method="post" >
         <table>
             <tbody>
             <?if (isset($_GET["id"]) != null ){?>
@@ -56,11 +56,11 @@ include("empresa.php");
                 </tr>
 
                     <?if(isset($_GET["id"]) != null ){?>
-                        <td><input type="hidden" name="acao" value="alterar" tabela="pessoa">
+                        <td><input type="hidden" name="acao_pessoa" value="alterar" >
                     <?}else{?>
-                        <td><input type="hidden" name="acao" value="inserir" tabela="pessoa" >
+                        <td><input type="hidden" name="acao_pessoa" value="inserir" >
                     <?}?>
-                <input type="hidden" name="id" value="<?=$pessoa["id"]?> " tabela="pessoa"></td>
+                <input type="hidden" name="id" value="<?=$pessoa["id"]?> " ></td>
                 <td><input class="enviar" type="submit" name="Enviar" value="Enviar" ></td>
                 </tr>
             </tbody>

@@ -16,8 +16,8 @@
                     <td><input type="text" name="empresa" value=""></td>
                 </tr>
                 <tr>
-                    <td><input type="hidden" name="acao" value="inserir" tabela="empresa">
-                <input type="hidden" name="idEmpresa" value="" tabela="empresa"></td>
+                    <td><input type="hidden" name="acao_empresa" value="inserir" >
+                <input type="hidden" name="idEmpresa" value="" ></td>
                 <td><input type="submit" ></td>
                 </tr>
             </tbody>
